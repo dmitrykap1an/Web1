@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../src/index.css">
+    <title>Dmitry Kaplan</title>
+    <script src="../src/App.js" defer></script>
+</head>
+<body>
+<header>
+    <h1 class="title">Laboratory work 1</h1>
+</header>
+<div>
+    <div class="student_info">
+        <p class="margin_text">Работу выполнил: Каплан Дмитрий Денисович</p>
+        <p class="margin_text">Группа: 32131</p>
+        <p class="margin_text">Вариант: 1213</p>
+    </div>
+    <div class="container">
+        <div class="block">
+            <form method="post" name="form" action="script.php" id="form">
+                <div>
+                    <div class="block_description">Выбор X</div>
+                    <label> -2 </label><input type="radio" id="x_button1" value="-2" class="x_button" name="x">
+                    <label> -1.5 </label><input type="radio" id="x_button2" value="-1.5" class="x_button" name="x">
+                    <label> -1</label><input type="radio" id="x_button3" value="-1" class="x_button" name="x">
+                    <label> -0.5</label><input type="radio" id="x_button4" value="-0.5" class="x_button" name="x">
+                    <label> 0</label><input type="radio" id="x_button5" value="0" class="x_button" name="x">
+                    <label> 0.5</label><input type="radio" id="x_button6" value="0.5" class="x_button" name="x">
+                    <label>1</label><input type="radio" id="x_button7" value="1" class="x_button" name="x">
+                    <label>1.5</label><input type="radio" id="x_button8" value="1.5" class="x_button" name="x">
+                    <label>2</label><input type="radio" id="x_button9" value="2" class="x_button" name="x">
+                </div>
+                <hr>
+                <div>
+                    <div class="block_description">Выбор Y</div>
+                    <div>
+                        <label for="y-text" class="block_description">Изменение Y:</label>
+                        <input type="text" name="y" id="y-text" placeholder="(-5;3)">
+                    </div>
+                </div>
+                <hr>
+                <div>
+                    <div class="block_description">Выбор R</div>
+                    <div class="r-choose">
+                        <input type="radio" name="r" id="choice_check1" value="1" class="checker">
+                        <label class="rki" for="choice_check1" class="block_description">R = 1</label>
+                        <input type="radio" name="r" id="choice_check2" value="1.5" class="checker">
+                        <label class="rki" for="choice_check2">R = 1.5</label>
+
+                        <input type="radio" name="r" id="choice_check3" value="2" class="checker">
+                        <label class="rki" for="choice_check3" class="block_description">R = 2</label>
+
+                        <input type="radio" name="r" id="choice_check4" value="2.5" class="checker">
+                        <label class="rki" for="choice_check4" class="block_description">R = 2.5</label>
+
+                        <input type="radio" name="r" id="choice_check5" value="3" class="checker">
+                        <label class="rki" for="choice_check5" class="block_description">R = 3</label>
+                    </div>
+                    <div>
+                        <input type="hidden" name="real_x" value="nichego" id="hidden_x">
+                        <input type="hidden" name="real_r" value="nichego" id="hidden_r">
+                    </div>
+                    <div>
+                        <input type="submit" value="Отправить" id="submit_button"  name="submit" onclick="return validate()">
+                        <input type="reset" value="Очистить форму">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="block img">
+        <img src="areas.png" alt="График">
+    </div>
+</div>
+<div class="table">
+    <table>
+        <tr>
+            <th>X</th>
+            <th>Y</th>
+            <th>R</th>
+            <th>Время запроса</th>
+            <th>Время выполнения
+        </tr>
+        <tr>
+            <td id="curr_x"></td>
+            <td id="curr_y"></td>
+            <td id="curr_r"></td>
+            <td id="curr_time"></td>
+            <td id="curr_ex_time"></td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
