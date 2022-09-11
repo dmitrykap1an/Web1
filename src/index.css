@@ -88,13 +88,18 @@ th{
 
 .x_button {
   cursor: pointer;
-  min-width: 20px;
+  size: 20px;
   border-color: red;
 }
+
 
 .r-button {
   cursor: pointer;
   min-width: 20px;
+  border-color: red;
+}
+
+.error{
   border-color: red;
 }
 
