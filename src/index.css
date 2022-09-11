@@ -8,14 +8,22 @@ body {
   justify-content: left;
 }
 
-.block {
+.input-data {
   margin-left: 13%;
   text-align: center;
   background-color: white;
   line-height: 270%;
   border-radius: 24px;
   width: 30%;
-  height: 400px;
+  height: 100%;
+}
+
+.input-image{
+  background-color: white;
+  border-radius: 24px;
+  line-height: normal;
+  margin-left: 13%;
+  width: 30%;
 }
 
 .block_description{
