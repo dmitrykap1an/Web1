@@ -33,7 +33,7 @@ function onsubmit(){
 function validateY(){
     let yVal = yButton.value.replace(",", ".")
     if(!isNaN(yVal)){
-        return checkY(Math.round(Number.parseFloat(yVal) * 1000) / 1000)
+        return checkY(Number.parseFloat(yVal).toFixed(3))
     }
     else{
         return {
