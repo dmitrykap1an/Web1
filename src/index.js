@@ -1,4 +1,3 @@
-
 const xButtons = document.querySelectorAll(".x_button"),
     rButtons = document.querySelectorAll(".r-button"),
     yButton = document.querySelector(".y_text"),
@@ -120,7 +119,7 @@ function updateTable(response) {
     R.innerHTML = response.R;
     hit.innerHTML = response.result;
     request_time.innerHTML = response.server_time;
-    timing.innerHTML = response.script_exec_time + "ms";
+    timing.innerHTML = response.execute_time + " ms";
     row.appendChild(x);
     row.appendChild(y);
     row.appendChild(R);
