@@ -2,7 +2,7 @@
 date_default_timezone_set('UTC');
 define("time_enter", hrtime(true));
 
-$db = new SQLite3("/tmp/web1.db");
+$db = new SQLite3("/tmp/DatabaseWeb1.db");
 checkBD($db);
 
 if (isset($_COOKIE["session"])){
