@@ -117,7 +117,7 @@ function updateTable(response) {
     x.innerHTML = response.x;
     y.innerHTML = response.y;
     R.innerHTML = response.R;
-    hit.innerHTML = response.result;
+    hit.innerHTML = response.result ? "Точка попала в область" : "Точка не попала в область";
     request_time.innerHTML = response.server_time;
     timing.innerHTML = response.execute_time + " ms";
     row.appendChild(x);
@@ -148,3 +148,24 @@ function sendRequest(array){
     request.send()
 
 }
+
+function reboot(response){
+    const parsedData = JSON.parse(response.responseText);
+    parsedData.forEach(data =>{
+        updateTable(JSON.parse(data))
+    });
+}
+
+function rebootRequest(){
+    const path = "script.php?restore";
+    const request = new XMLHttpRequest();
+    request.open("GET", path, true);
+    request.onreadystatechange = () =>{
+        if(request.readyState === 4 && request.status === 200){
+            reboot(request)
+        }
+    }
+    request.send()
+}
+
+rebootRequest()
