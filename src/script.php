@@ -2,11 +2,13 @@
 date_default_timezone_set('UTC');
 define("time_enter", hrtime(true));
 
+//"/tmp/DatabaseWeb1.db"
+//"/tmp/Web1.db"
 $db = new SQLite3("/tmp/DatabaseWeb1.db");
 checkBD($db);
 
-if (isset($_COOKIE["session"])){
-    define("cookie",  $_COOKIE["session"]);
+if (isset($_COOKIE["ID"])){
+    define("cookie",  $_COOKIE["ID"]);
 }
 else {
 
@@ -44,9 +46,9 @@ if(!$restore){
             ($x >= 0 && $y <= 0 && ($x * $x + $y * $y) <= ($R/2 * $R/2)) ||
             ($x <= $R/2 && $y <= $R))
         {
-            $result = "Точка попала в область";
+            $result = true;
         } else {
-            $result = "Точка не попала в область";
+            $result = false;
         }
 
         $server_time = date('e H:i:s', time());
@@ -90,9 +92,8 @@ else{
     $getStatement->bindValue(":id", cookie, SQLITE3_TEXT);
     $result = $getStatement->execute();
     $response = [];
-    while ($row = $result->fetchArray())
-    {
-      $response[] = $row['resultJson'];
+    while ($row = $result->fetchArray()) {
+        $response[] = $row['resultJson'];
     }
     echo json_encode($response);
 }
