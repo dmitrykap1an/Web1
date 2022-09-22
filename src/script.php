@@ -88,7 +88,13 @@ else{
         "SELECT resultJson FROM web1table WHERE cookieID=:id"
     );
     $getStatement->bindValue(":id", cookie, SQLITE3_TEXT);
-    echo $getStatement->execute();
+    $result = $getStatement->execute();
+    $response = [];
+    while ($row = $result->fetchArray())
+    {
+      $response[] = $row['resultJson'];
+    }
+    echo json_encode($response);
 }
 
 function checkBD($db){
